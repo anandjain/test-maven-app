@@ -6,11 +6,12 @@
 	
 	<groupId>com.example</groupId>
 	<artifactId>helloworld</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>$version</version>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	
 	
 	<build>
 		<finalName>hello</finalName>
@@ -53,8 +54,29 @@
 	<distributionManagement>
  	<repository>
  		<id>central</id>
- 		<name>libs-snapshot-local</name>
+ 		<name>helloworld-releases</name>
  		<url>http://172.16.201.75:8081/artifactory/libs-release-local</url>
  	</repository>
-	</distributionManagement>
-</project>
+	 <snapshotRepository>
+ <id>snapshots</id>
+ <name>helloworld-snapshots</name>
+ <url>http://172.16.201.75:8081/artifactory/libs-snapshot-local</url>
+ </snapshotRepository>
+		</distributionManagement>
+	<repositories>
+	   <repository>
+		  <snapshots>
+			 <enabled>false</enabled>
+		  </snapshots>
+		  <id>central</id>
+		  <name>helloworld-release</name>
+		  <url>http://localhost:8081/artifactory/libs-release</url>
+	   </repository>
+	   <repository>
+		  <snapshots />
+		  <id>snapshots</id>
+		  <name>helloworld-snapshot</name>
+		  <url>http://localhost:8081/artifactory/libs-snapshot</url>
+	   </repository>
+	</repositories>
+	</project>
