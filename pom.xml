@@ -53,7 +53,7 @@
 	</build>
 	<distributionManagement>
  	<repository>
- 		<id>central</id>
+ 		<id>helloworld</id>
  		<name>helloworld-releases</name>
  		<url>http://172.16.201.75:8081/artifactory/libs-release-local</url>
  	</repository>
